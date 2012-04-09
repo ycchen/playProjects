@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?
-  	false
+  	session[:password] == "foobar"
   end
 end
