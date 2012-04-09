@@ -1,5 +1,6 @@
 <% title "Listing products" %>
 
+<!--
 <table>
   <tr>
     <th>Name</th>
@@ -19,7 +20,36 @@
   </tr>
 <% end %>
 </table>
+-->
+<div id="products">
+  <% @products.each do |product| %>
+    <div class="product">
+      <div class="side">
+        <div class="number">
+          #<%= product.id %>
+        </div>
+        <div calss="">
+          <%= product.created_at.strftime('%b %d')%>
+        </div>
+        <div class="actions">
+          <% if admin? %>
+          <%= link_to 'Edit', edit_product_path(product) %><br/>
+          <%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %>
+          <% end %>
+        </div>
+      </div>
+      <div class="main">
+        <div class="product">
+            <%= product.name%><br/>
+            <%= number_to_currency(product.price) %>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  <% end %>
+</div>
 
 <br />
-
-<%= link_to 'New Product', new_product_path %>
+<% if admin? %>
+  <%= link_to 'New Product', new_product_path %>
+<% end %>

@@ -86,3 +86,36 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+/**  products **/
+
+#products {
+  margin-right: 200px;
+  width: 400px;
+}
+
+.product {
+  color: #E98C08;
+}
+
+
+.number {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.side {
+  float: left;
+  height: 70px;
+  color: #bbb;
+  /*background-color: #888;*/
+}
+.main {
+    /*background-color: #333;*/
+    padding-left: 70px;
+    color: #E98C08;
+}
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}

@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :authorize, :except => [:index, :show ]
   # GET /products
   # GET /products.json
   def index
