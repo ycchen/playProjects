@@ -21,6 +21,7 @@
 	<h3 id="reviews_count"><%= pluralize(@product.comments.size, 'Review')%></h3>
 
 	<h2>Review</h2>
+
 	<div id="reviews">
 		<% @product.comments.each do |comment| %>
 			<li><%= comment.name %>:<%= comment.content %></li>
