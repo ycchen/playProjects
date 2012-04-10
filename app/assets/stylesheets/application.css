@@ -113,6 +113,20 @@ a {
   color: #E98C08;
   padding: 5px;
 }
+.product a {
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.product a:link,.product a:active, .product a:visited {
+  color: #E98C08;
+}
+
+.actions a {
+  font-size: 12px;
+  text-decoration: none;
+}
 
 .number {
   text-transform: uppercase;
@@ -128,7 +142,7 @@ a {
 
 .main {
     padding-left: 70px;
-    color: #E98C08;
+    /*color: #E98C08;*/
 }
 
 .clear {
@@ -144,3 +158,23 @@ a {
   padding: 10px,0px, 20px, 0px;
 }
 
+/*****
+******  # is for ID
+******  . is for CLASS
+******/
+
+/***** comments ****/
+#reviews {
+  padding: 5px;
+  background-color: #DDD;
+  border: solid 1px #999;
+}
+
+.reviews {
+  margin: 5px;
+  border-top: solid 1px #ccc;
+}
+
+.reviews:first-child {
+  border: none;
+}

@@ -23,12 +23,17 @@
 	<h2>Review</h2>
 
 	<div id="reviews">
+		<!--
 		<% @product.comments.each do |comment| %>
 			<li><%= comment.name %>:<%= comment.content %></li>
 		<% end %>
+		-->
+		<!--<%= render :partial => @product.comments %>-->
+
+		<%= render :partial => 'comments/comment', :collection => @product.comments%>
 	</div>
 	<h3>Add a Review</h3>
-	<%= form_for :comment, :url=> comments_path do |f| %>
+	<%= form_for :comment, :remote => true,:html => {:id=> "new_comment"},:url=> comments_path do |f| %>
 		<%= f.hidden_field :product_id, :value => @product.id %>
 		<p>
 			<%= f.label :name %><br/>

@@ -1,0 +1,5 @@
+//$("#reviews").before('<div>Hello</div>');
+$('#reviews_count').html("<%= pluralize(@comment.product.comments.count, 'Review')%>");
+//$('#reviews').append("<li><%= @comment.name%> <%= @comment.content%></li>");
+$("#reviews").append("<%= escape_javascript(render(:partial => @comment)) %>");
+$('#new_comment')[0].reset()
