@@ -1,0 +1,15 @@
+
+<p>
+  <b>Name:</b>
+  <%= @task.name %>
+</p>
+
+<p>
+  <b>Due at:</b>
+  <%= @task.due_at %>
+</p>
+
+<% admin_area do %>
+	<%= link_to 'Edit', edit_task_path(@task) %> |
+	<%= link_to 'Back', tasks_path %>
+<% end %>

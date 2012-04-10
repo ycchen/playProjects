@@ -1,4 +1,10 @@
 RorProject::Application.routes.draw do
+  resources :comments
+
+  resources :projects
+
+  resources :tasks
+
   resources :products
   resources :sessions
   match 'login' => 'sessions#new', :as => :login

@@ -32,12 +32,27 @@ a {
 }
 
 #container {
-  width: 75%;
-  margin: 0 auto;
+  width: 715px;
+  margin: 20px auto 25px auto;
   background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
+  padding: 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+/**** nav ****/
+#top_links_container {
+  background-color: #fff;
+  /*float: left/right/none;*/
+  width: 715px;
+  padding: 20px;
+   margin: 20px auto 25px auto;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  /*
+  margin-right: 30px;
+  margin-top: 10px;
+  */
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -96,26 +111,36 @@ a {
 
 .product {
   color: #E98C08;
+  padding: 5px;
 }
-
 
 .number {
   text-transform: uppercase;
   font-weight: bold;
 }
+
 .side {
   float: left;
   height: 70px;
   color: #bbb;
   /*background-color: #888;*/
 }
+
 .main {
-    /*background-color: #333;*/
     padding-left: 70px;
     color: #E98C08;
 }
+
 .clear {
   clear: both;
   height: 0;
   overflow: hidden;
 }
+
+/**** project ***/
+#preview {
+  background-color: #bbb;
+  width: 350px;
+  padding: 10px,0px, 20px, 0px;
+}
+

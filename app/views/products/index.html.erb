@@ -40,14 +40,20 @@
       </div>
       <div class="main">
         <div class="product">
-            <%= product.name%><br/>
+            <%= link_to product.name, product %><br/>
             <%= number_to_currency(product.price) %>
         </div>
       </div>
       <div class="clear"></div>
     </div>
   <% end %>
-</div>
+  <!--
+  <ul>
+  <% @products.each do |product| %>
+    <li><strong><%= product.name %></strong> <%= product.created_at.to_s(:short) %></li>
+  <% end %>
+  </ul>
+  -->
 
 <br />
 <% if admin? %>
