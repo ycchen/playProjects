@@ -19,9 +19,9 @@ class Task < ActiveRecord::Base
 
 	def self.search(search)
 		if search
-			find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+			find(:all, :conditions => ['name LIKE ? and complete=?', "%#{search}%", 'f'])
 		else
-			find(:all)
+			find(:all, :conditions => {:complete => false})
 		end
 	end
 end

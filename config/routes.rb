@@ -3,7 +3,15 @@ RorProject::Application.routes.draw do
 
   resources :projects
 
-  resources :tasks
+  resources :tasks do
+    collection do
+      put 'complete'
+      # get 'completed'
+    end
+  end
+  #, :collection => { :completed => :get }, :member => {:complete => :put}
+  # match 'completed_tasks' => 'tasks#completed', :as => :completed_tasks
+  # match 'complete_task' => 'tasks#complete', :as => :complete_task
 
   resources :products
   resources :sessions

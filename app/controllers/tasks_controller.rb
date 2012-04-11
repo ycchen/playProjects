@@ -2,7 +2,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-
+    @incomplete_tasks = Task.find_all_by_complete('f')
+    @complete_tasks = Task.find_all_by_complete('t')
     @tasks = Task.search(params[:search])
 
     respond_to do |format|
@@ -80,5 +81,22 @@ class TasksController < ApplicationController
       format.html { redirect_to tasks_url }
       format.json { head :no_content }
     end
+  end
+
+  def completed
+    #@tasks = Task.find(:all, :conditions => "complete = 'f'")
+    #@tasks = Task.find(:all, :conditions => 'complete = f')
+    @tasks = Task.find_all_by_complete('t')
+  end
+
+  def complete
+    # TODO mark selected task as complete
+    #Task.update_all({:complete => true, :id => params[:task_ids]})
+    # @task = Task.find(params[:task_ids])
+    # @task.update_attribute :complete, 't'
+
+    Task.update_all(["complete = ?", 't'], :id => params[:task_ids])
+    flash[:notice] = "marked task as complete"
+    redirect_to tasks_path
   end
 end
