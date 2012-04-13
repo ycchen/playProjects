@@ -71,6 +71,10 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+    rescue ActiveRecord::StaleObjectError
+      @product.reload
+      render :action => 'conflict'
+
   end
 
   # DELETE /products/1

@@ -3,7 +3,14 @@ class ApplicationController < ActionController::Base
 
   helper_method :admin?
 
+
+  rescue_from ActiveRecord::RecordNotFound, :with => :rescue_not_found
+
   protected
+
+  def rescue_not_found
+    render :file => "#{Rails.root.join}/public/404_new.html", :status => :not_found
+  end
 
   def authorize
   	unless admin?

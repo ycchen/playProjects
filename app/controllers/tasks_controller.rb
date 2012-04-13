@@ -6,6 +6,8 @@ class TasksController < ApplicationController
     @complete_tasks = Task.find_all_by_complete('t')
     @tasks = Task.search(params[:search])
 
+    @tasks_near_due = Task.find_near_due(Date.today)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tasks }
@@ -46,7 +48,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        format.html { redirect_to tasks_path, notice: 'Task was successfully created.' }
         format.json { render json: @task, status: :created, location: @task }
       else
         format.html { render action: "new" }

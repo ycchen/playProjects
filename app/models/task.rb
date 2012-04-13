@@ -21,7 +21,14 @@ class Task < ActiveRecord::Base
 		if search
 			find(:all, :conditions => ['name LIKE ? and complete=?', "%#{search}%", 'f'])
 		else
-			find(:all, :conditions => {:complete => false})
+			# find(:all, :conditions => {:complete => false})
+			find(:all)
 		end
+	end
+
+	def self.find_near_due(date)
+		#debugger
+		due_date = date + 10
+		find(:all, :conditions => ['due_at < ?', due_date], :order => 'due_at')
 	end
 end
