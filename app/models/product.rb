@@ -13,4 +13,7 @@ class Product < ActiveRecord::Base
 		create_category(:name => new_category_name) unless new_category_name.blank?
 	end
 
+	def to_param
+		"#{id}-#{name.parameterize}"
+	end
 end
