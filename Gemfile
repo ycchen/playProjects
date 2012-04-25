@@ -9,6 +9,10 @@ gem 'sqlite3'
 
 gem 'nifty-generators'
 gem 'chronic'
+gem 'prawn'
+gem 'prawnto'
+gem 'populator'
+gem 'faker'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -38,3 +42,5 @@ gem 'jquery-rails'
 
 # To use debugger
 gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem "mocha", :group => :test

@@ -1,0 +1,8 @@
+<% title "Select a Letter"%>
+<% for letter in @letters %>
+  <%= link_to letter.char %>
+<% end %>
+<br/>
+<% @letters.each do |letter| %>
+	<%= link_to letter.char, @letter%>
+<% end %>

@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (1.0.1)
     actionmailer (3.2.2)
       actionpack (= 3.2.2)
       mail (~> 2.4.0)
@@ -43,6 +44,8 @@ GEM
     erubis (2.7.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
+    faker (1.0.1)
+      i18n (~> 0.4)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.3)
@@ -56,10 +59,23 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.1)
     mime-types (1.18)
+    mocha (0.10.5)
+      metaclass (~> 0.0.1)
     multi_json (1.2.0)
     nifty-generators (0.4.6)
+    pdf-reader (1.1.0)
+      Ascii85 (~> 1.0.0)
+      ruby-rc4
     polyglot (0.3.3)
+    populator (1.0.0)
+    prawn (0.12.0)
+      pdf-reader (>= 0.9.0)
+      ttfunk (~> 1.0.2)
+    prawnto (0.1.1)
+      prawn
+      rails (>= 2.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -93,6 +109,7 @@ GEM
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
       ruby-debug-base19 (>= 0.11.19)
+    ruby-rc4 (0.1.5)
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     sass (3.1.15)
@@ -110,6 +127,7 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
+    ttfunk (1.0.3)
     tzinfo (0.3.33)
     uglifier (1.2.4)
       execjs (>= 0.3.0)
@@ -121,8 +139,13 @@ PLATFORMS
 DEPENDENCIES
   chronic
   coffee-rails (~> 3.2.1)
+  faker
   jquery-rails
+  mocha
   nifty-generators
+  populator
+  prawn
+  prawnto
   rails (= 3.2.2)
   ruby-debug19
   sass-rails (~> 3.2.3)

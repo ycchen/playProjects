@@ -9,12 +9,18 @@
   </head>
   <body>
     <div id="top_links_container">
-      <%= link_to "Home", :root %>|
+      <%= link_to "Home", root_path %>|
+      <%= link_to "Projects", :projects %>|
+      <%= link_to "Tasks", :tasks %>|
+      <%= link_to "letters", :letters %>|
+      <%= link_to "Products", :products %>|
+
       <% if admin? %>
         <%= link_to "logout", :logout %>
       <% else %>
       <%= link_to "login", :login %>
       <% end %>
+
     </div>
     <div id="container">
       <% flash.each do |name, msg| %>

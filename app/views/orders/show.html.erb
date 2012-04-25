@@ -1,0 +1,32 @@
+<% title "Order" %>
+
+<p>
+  <strong>Cart:</strong>
+  <%= @order.cart_id %>
+</p>
+<p>
+  <strong>Ip Address:</strong>
+  <%= @order.ip_address %>
+</p>
+<p>
+  <strong>First Name:</strong>
+  <%= @order.first_name %>
+</p>
+<p>
+  <strong>Last Name:</strong>
+  <%= @order.last_name %>
+</p>
+<p>
+  <strong>Card Type:</strong>
+  <%= @order.card_type %>
+</p>
+<p>
+  <strong>Card Expires On:</strong>
+  <%= @order.card_expires_on %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_order_path(@order) %> |
+  <%= link_to "Destroy", @order, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", orders_path %>
+</p>

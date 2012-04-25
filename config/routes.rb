@@ -1,4 +1,11 @@
 RorProject::Application.routes.draw do
+
+  resources :orders
+
+  get "store/index"
+  match 'store'  => 'store#index', :as => :stroe
+
+  resources :letters
   resources :users
 
   resources :comments
@@ -69,7 +76,7 @@ RorProject::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'products#index'
+  root :to => 'store#index'
 
   # See how all your routes lay out with "rake routes"
 
