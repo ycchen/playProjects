@@ -25,5 +25,18 @@ Existing Git Repo?
 ##################################################################
 
 ##################################################################
+User mailer
+# create user model using scaffold
+rails g scaffold user name:string email:string
+rake db:migrate
 
+#add new initializer called /config/initializers/setup_mail.rb
+
+#create new file called user_mailer.rb in/app/mailers folder
+rails g mailer user_mailer
+
+#create intercepter in \lib
+# add require 'development_mail_interceptor' in setup_mail.rb
+# the interceptor only works on development evnironment 
+# add ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor) if  Rails.env.development? in setup_mail.rb
 ##################################################################

@@ -14,7 +14,8 @@
       <%= link_to "Tasks", :tasks %>|
       <%= link_to "letters", :letters %>|
       <%= link_to "Products", :products %>|
-      <%= link_to "Cart", current_cart_path %>
+      <%= link_to "Cart", current_cart_path %> |
+      <%= link_to "Users", users_path %> |
       <% if admin? %>
         <%= link_to "logout", :logout %>
       <% else %>
