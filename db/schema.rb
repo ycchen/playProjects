@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(:version => 20120423215456) do
 
   create_table "lineitems", :force => true do |t|
     t.decimal  "unit_price"
-    t.integer  "product_it"
+    t.integer  "product_id"
     t.integer  "cart_id"
     t.integer  "quantity"
     t.datetime "created_at", :null => false

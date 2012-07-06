@@ -1,5 +1,8 @@
 <% title "Listing products" %>
 
+<p>
+  <%= link_to "CSV", products_path(format: "csv") %>
+</p>
 <div id="products">
   <% @products.each do |product| %>
     <div class="products">

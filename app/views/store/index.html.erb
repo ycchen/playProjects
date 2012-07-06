@@ -25,6 +25,9 @@
               Comments: (<%= product.comments.size  %>)
             <% end %>
         </div>
+        <div class="actions">
+            <%= link_to 'Add to Cart', lineitems_path(:product_id => product), :method => :post %><br/>
+        </div>
       </div>
       <div class="clear"></div>
     </div>

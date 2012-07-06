@@ -6,6 +6,29 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, :with => :rescue_not_found
 
+  private
+    # def current_cart
+    #   if session[:cart_id]
+    #     @current_cart ||= Cart.find(session[:cart_id])
+    #     session[:cart_id] = nil if @current_cart.purchased_at
+    #   end
+
+    #   if session[:cart_id].nil?
+    #     @current_cart = Cart.create!
+    #     session[:cart_id] = @current_cart.id
+    #   end
+    #   @current_cart
+    # end
+
+
+    def current_cart
+      Cart.find(session[:cart_id])
+    rescue ActiveRecord::RecordNotFound
+      cart = Cart.create
+      session[:cart_id] = cart.id
+      cart
+    end
+
   protected
 
   def rescue_not_found
@@ -23,4 +46,5 @@ class ApplicationController < ActionController::Base
   def admin?
   	session[:password] == "foobar"
   end
+
 end

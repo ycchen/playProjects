@@ -9,6 +9,16 @@ class Product < ActiveRecord::Base
 	validates :name, :presence => true
 	validates :price, :presence => true, :numericality => true
 
+	def self.to_csv(options = {})
+		CSV.generate(options) do |csv|
+		  csv << column_names
+		  # all.each do |product|
+		  #   csv << product.attributes.values_at(*column_names)
+		  # end
+		end
+	end
+
+
 	def create_category_from_name
 		create_category(:name => new_category_name) unless new_category_name.blank?
 	end
@@ -16,4 +26,5 @@ class Product < ActiveRecord::Base
 	def to_param
 		"#{id}-#{name.parameterize}"
 	end
+
 end

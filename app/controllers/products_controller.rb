@@ -3,10 +3,11 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.order(:name)
 
     respond_to do |format|
       format.html # index.html.erb
+      format.csv  { send_data @products.to_csv }
       format.json { render json: @products }
       format.pdf  { render :layout => false }
     end

@@ -1,12 +1,18 @@
 RorProject::Application.routes.draw do
 
-  resources :orders
+  get "carts/show"
 
+  get "lineitems/new"
+
+  get "lineitems/create"
   get "store/index"
+
   match 'store'  => 'store#index', :as => :stroe
 
+  resources :lineitems
   resources :letters
   resources :users
+  resources :orders
 
   resources :comments
 
@@ -22,10 +28,13 @@ RorProject::Application.routes.draw do
   # match 'completed_tasks' => 'tasks#completed', :as => :completed_tasks
   # match 'complete_task' => 'tasks#complete', :as => :complete_task
 
+  resources :carts
   resources :products
   resources :sessions
   match 'login' => 'sessions#new', :as => :login
   match 'logout' => 'sessions#destroy', :as => :logout
+
+  match 'current_cart' => 'carts#show', :id => 'current'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,21 @@
+<% title "Shopping Cart" %>
+<%=@cart %>
+<table border="1">
+	<tr>
+		<td>Product</td>
+		<td>Qty</td>
+		<td>Unit Price</td>
+		<td>Full Price</td>
+	</tr>
+	<% @cart.lineitems.each do |lineitems| %>
+		<tr>
+			<td><%= lineitems.product.name %></td>
+			<td><%= lineitems.quantity %></td>
+			<td><%= number_to_currency(lineitems.unit_price) %></td>
+			<td><%= number_to_currency(lineitems.full_price) %></td>
+		</tr>
+	<% end %>
+	<tr>
+		<td colspan="4"> Total: <%= number_to_currency(0) %> </td>
+	</tr>
+</table>
